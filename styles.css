@@ -1,0 +1,121 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full height and width for the background */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Background image */
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Image icon position (bottom-right corner) */
+.image-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.image-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make the image round */
+    border: 2px solid white; /* Optional: Add a border for better visibility */
+    object-fit: cover; /* Ensure the image is properly contained within the circle */
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 600px) {
+    /* Adjust image icon for mobile (smaller size) */
+    .image-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Fullscreen image viewer */
+.fullscreen-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    display: none;
+
+}
+
+.fullscreen-image.active {
+    display: block;
+}
+
+/* Close button for the image viewer */
+#close-viewer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Music control button (bottom-left) */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+#play-pause-button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#play-pause-button img {
+    width: 60%; /* Icon size relative to the button */
+    height: 60%;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Smaller button for mobile */
+    #play-pause-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #play-pause-button img {
+        width: 50%;
+        height: 50%;
+    }
+}
